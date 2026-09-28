@@ -4,7 +4,6 @@
     "backend": { "root": "backend", "entrypoint": "server.js" }
   },
   "rewrites": [
-    { "source": "/api(/.*)?", "destination": { "type": "service", "service": "backend" } },
-    { "source": "/(.*)", "destination": { "type": "service", "service": "frontend" } }
+    { "source": "/api/(.*)?", "destination": { "type": "service", "service": "backend" } }
   ]
 }
