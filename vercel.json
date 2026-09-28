@@ -1,7 +1,7 @@
 {
   "services": {
     "frontend": { "root": "frontend", "framework": "vite" },
-    "backend": { "root": "backend", "entrypoint": "backend/server.js" }
+    "backend": { "root": "backend", "entrypoint": "server.js" }
   },
   "rewrites": [
     { "source": "/api(/.*)?", "destination": { "type": "service", "service": "backend" } },
