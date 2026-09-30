@@ -1,4 +1,4 @@
-import User from "../models/userModel.js   ";
+import User from "../models/userModel.js";
 import Payment from "../models/Payment.js";
 
 // Joining fee and how much of it each upline level earns.
