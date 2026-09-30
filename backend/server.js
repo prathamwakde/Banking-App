@@ -15,7 +15,14 @@ connectDB();
 
 const app = express();
 
-app.use(cors({ origin: process.env.CLIENT_URL || "http://localhost:5173" }));
+// CLIENT_URL madhe ek kiwa anek URL (comma ne vegle) deta yetat.
+// Shevti "/" nako, ani https:// must ahe.
+const allowed = (process.env.CLIENT_URL || "http://localhost:5173")
+  .split(",")
+  .map((s) => s.trim().replace(/\/$/, ""))
+  .filter(Boolean);
+
+app.use(cors({ origin: allowed }));
 app.use(express.json());
 
 app.get("/", (req, res) => res.json({ message: "GroupGain API is running" }));
